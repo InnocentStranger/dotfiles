@@ -1,23 +1,18 @@
 #!/bin/bash
 
 # Configuration
+URL="https://github.com/InnocentStranger/deepcool-digital-linux/releases/download/1.0.0/deepcool-digital-linux"
 BINARY_NAME="deepcool-digital-linux"
 INSTALL_PATH="/usr/local/bin/$BINARY_NAME"
 SERVICE_NAME="deepcool-digital.service"
 UDEV_RULE_PATH="/etc/udev/rules.d/99-deepcool-digital.rules"
 
-# 1. Check if the binary exists in the current folder
-if [ ! -f "./$BINARY_NAME" ]; then
-    echo "❌ Error: Could not find '$BINARY_NAME' in the current directory."
-    echo "   Please make sure you are running this script in the same folder as the executable."
-    exit 1
-fi
-
 echo "🚀 Starting installation..."
 
+
 # 2. Install the binary
-echo "📂 Moving executable to $INSTALL_PATH..."
-sudo cp "./$BINARY_NAME" "$INSTALL_PATH"
+echo "📂 Downloading executable to $INSTALL_PATH..."
+sudo curl -L "$URL" -o "$INSTALL_PATH"
 sudo chmod +x "$INSTALL_PATH"
 
 # 3. Create Udev Rules (for rootless hardware access)

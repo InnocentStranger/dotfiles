@@ -3,7 +3,7 @@
   "position": "top",
   "height": 30,
   "spacing": 4,
-  "modules-left": ["hyprland/window"],
+  "modules-left": ["hyprland/window", "keyboard-state"],
   "modules-center": ["tray", "hyprland/workspaces", "clock"],
   "modules-right": [
     "pulseaudio",
@@ -82,5 +82,18 @@
     "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
     // Opens Blueman manager (needs 'blueman' installed)
     "on-click": "blueman-manager",
+  },
+
+  "keyboard-state": {
+    "capslock": true,
+    "device-path": "/dev/input/by-id/usb-SONiX_Draconic-event-kbd",
+    // "device-path": "/dev/input/by-id/usb-Keychron_Keychron_V1_Max-event-kbd",
+    "format": {
+      "capslock": "{icon} {name}",
+    },
+    "format-icons": {
+      "locked": "",
+      "unlocked": "",
+    },
   },
 }

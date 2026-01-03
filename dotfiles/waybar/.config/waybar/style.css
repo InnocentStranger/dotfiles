@@ -83,3 +83,21 @@ window#waybar {
   background-color: #f7768e;
   color: #1a1b26;
 }
+
+#keyboard-state label {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #c0caf5;
+  font-size: 14px;
+  padding: 0 6px;
+  margin: 4px 2px;
+  border-radius: 15px;
+  min-width: 55px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Active Style: CAPS is ON - Red Alert Glow */
+#keyboard-state label.locked {
+  background-color: #f7768e;
+  color: #1a1b26;
+}

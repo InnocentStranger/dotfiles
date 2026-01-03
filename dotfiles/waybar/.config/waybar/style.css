@@ -1,0 +1,83 @@
+* {
+  font-family: "JetBrainsMono Nerd Font";
+  font-size: 14px;
+}
+
+window#waybar {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  box-shadow: none;
+}
+
+/* Grouped Shared Glass Styling */
+#workspaces,
+#clock,
+#battery,
+#pulseaudio,
+#network {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Individual Module Logic (Preserving your exact spacing/rounding) */
+#workspaces {
+  margin: 2px 5px;
+  padding: 3px 6px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+#clock,
+#battery,
+#pulseaudio,
+#network {
+  margin: 4px 2px;
+  padding: 0 10px;
+  border-radius: 10px;
+}
+
+/* Workspace Button Logic */
+#workspaces button {
+  padding: 0px;
+  margin: 0px 3px;
+  min-height: 1px;
+  min-width: 25px;
+  color: transparent;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+#workspaces button.active {
+  background-color: #7aa2f7;
+  color: #16161e;
+  min-width: 60px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+#workspaces button:hover {
+  box-shadow: inherit;
+  text-shadow: inherit;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+#workspaces button.active:hover {
+  background-color: #7aa2f7;
+}
+
+#custom-power {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #f7768e;
+  border-radius: 10px;
+  margin: 4px 2px;
+  padding-right: 4px; /* Pushes it LEFT by 4px */
+  padding-left: 0px; /* Ensures nothing is pushing it from the left */
+  min-width: 42px;
+  min-height: 24px;
+}
+
+#custom-power:hover {
+  background-color: #f7768e;
+  color: #1a1b26;
+}

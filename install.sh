@@ -13,6 +13,7 @@ PACKAGES=(
   tmux
   base-devel
   neovim-git
+  stow
 )
 
 echo "🔄Updating system and installing packages..."
@@ -29,7 +30,6 @@ if ! grep -q "source /usr/share/nvm/init-nvm.sh" ~/.bashrc; then
 else 
   echo "nvm already present in .bashrc..."
 fi
-
 source /usr/share/nvm/init-nvm.sh
 nvm install 22
 nvm use 22
@@ -41,5 +41,8 @@ if ! grep -q "alias tmux=" ~/.bashrc; then
 else
     echo "Tmux alias already exists in .bashrc, skipping..."
 fi
+
+echo "🔗 Linking configurations with GNU Stow..."
+# add stow files here
 
 echo "✨Installation Successful!! ✅"

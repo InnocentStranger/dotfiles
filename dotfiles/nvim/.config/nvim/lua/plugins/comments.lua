@@ -1,14 +1,12 @@
 return {
-    "numToStr/Comment.nvim",
-    event = "InsertEnter",
-    config = function()
-        require('Comment').setup()
-        -- In your init.lua or keybindings.lua
-        vim.api.nvim_set_keymap('n', '<leader>/', 'gcc', { noremap = false, silent = true })  -- Single-line comment
-        vim.api.nvim_set_keymap('n', 'cb', 'gbc', { noremap = false, silent = true })  -- Block comment
+	"folke/ts-comments.nvim",
+	opts = {},
+	event = "VeryLazy",
+	enabled = vim.fn.has("nvim-0.10.0") == 1,
 
-        vim.api.nvim_set_keymap('v', '<leader>/', 'gcc', { noremap = false, silent = true })  -- Single-line comment
-        vim.api.nvim_set_keymap('v', 'cb', 'gbc', { noremap = false, silent = true })  -- Block comment
-    end
+	-- Add your custom shortcuts here
+	keys = {
+		{ "<leader>/", "gcc", remap = true, desc = "Toggle Comment Line" },
+		{ "<leader>/", "gc", mode = "v", remap = true, desc = "Toggle Comment Selection" },
+	},
 }
-
